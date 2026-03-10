@@ -8,7 +8,7 @@ export default function Hero() {
           Hi, I&apos;m Ben
         </h1>
         <div className="animate-fade-in-up animation-delay-200 mt-6 flex flex-col sm:flex-row items-center justify-center gap-0">
-          <a href="#student" className="cursor-pointer">
+          <a href="#student" className="cursor-pointer shrink-0">
             <FuzzyText
               fontSize="clamp(3rem, 8vw, 3.5rem)"
               fontWeight={700}
@@ -18,12 +18,13 @@ export default function Hero() {
               fuzzRange={14}
               enableHover
               clickEffect
+              className="shrink-0"
             >
               Student
             </FuzzyText>
           </a>
-          <span className="text-muted select-none text-3xl sm:text-5xl">—</span>
-          <a href="#athlete" className="cursor-pointer">
+          <span className="text-muted select-none text-3xl sm:text-5xl shrink-0">—</span>
+          <a href="#athlete" className="cursor-pointer shrink-0">
             <FuzzyText
               fontSize="clamp(3rem, 8vw, 3.5rem)"
               fontWeight={700}
@@ -33,6 +34,7 @@ export default function Hero() {
               fuzzRange={14}
               enableHover
               clickEffect
+              className="shrink-0"
             >
               Athlete
             </FuzzyText>
