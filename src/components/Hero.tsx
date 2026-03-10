@@ -10,7 +10,7 @@ export default function Hero() {
         <div className="animate-fade-in-up animation-delay-200 mt-6 flex items-center justify-center gap-0">
           <a href="#student" className="cursor-pointer">
             <FuzzyText
-              fontSize="clamp(2.2rem, 5vw, 2.4rem)"
+              fontSize="clamp(2.6rem, 6vw, 3rem)"
               fontWeight={700}
               color="#ededed"
               baseIntensity={0.3}
@@ -22,10 +22,10 @@ export default function Hero() {
               Student
             </FuzzyText>
           </a>
-          <span className="text-muted select-none" style={{ fontSize: "clamp(2.2rem, 5vw, 2.4rem)" }}>—</span>
+          <span className="text-muted select-none" style={{ fontSize: "clamp(2.6rem, 6vw, 3rem)" }}>—</span>
           <a href="#athlete" className="cursor-pointer">
             <FuzzyText
-              fontSize="clamp(2.2rem, 5vw, 2.4rem)"
+              fontSize="clamp(2.6rem, 6vw, 3rem)"
               fontWeight={700}
               color="#ededed"
               baseIntensity={0.3}

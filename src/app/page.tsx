@@ -13,19 +13,21 @@ import DesktopOnly from "@/components/DesktopOnly";
 export default function Home() {
   return (
     <div className="relative min-h-screen">
-      {/* Dithered wave background */}
-      <div className="fixed inset-0 z-0 opacity-30">
-        <Dither
-          waveColor={[0.5, 0.5, 0.5]}
-          disableAnimation={false}
-          enableMouseInteraction
-          mouseRadius={0.1}
-          colorNum={38.5}
-          waveAmplitude={0.3}
-          waveFrequency={3}
-          waveSpeed={0.02}
-        />
-      </div>
+      {/* Dithered wave background - desktop only */}
+      <DesktopOnly>
+        <div className="fixed inset-0 z-0 opacity-30">
+          <Dither
+            waveColor={[0.5, 0.5, 0.5]}
+            disableAnimation={false}
+            enableMouseInteraction
+            mouseRadius={0.1}
+            colorNum={38.5}
+            waveAmplitude={0.3}
+            waveFrequency={3}
+            waveSpeed={0.02}
+          />
+        </div>
+      </DesktopOnly>
 
       {/* Custom cursors - desktop only */}
       <DesktopOnly>
