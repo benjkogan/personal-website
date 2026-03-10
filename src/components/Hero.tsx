@@ -1,4 +1,5 @@
 import FuzzyText from "@/components/FuzzyText";
+import DesktopOnly from "@/components/DesktopOnly";
 
 export default function Hero() {
   return (
@@ -7,39 +8,46 @@ export default function Hero() {
         <h1 className="animate-fade-in-up text-5xl font-bold tracking-tight sm:text-7xl">
           Hi, I&apos;m Ben
         </h1>
-        <div className="animate-fade-in-up animation-delay-200 mt-6 flex flex-col sm:flex-row items-center justify-center gap-0">
-          <a href="#student" className="cursor-pointer shrink-0">
-            <FuzzyText
-              fontSize="clamp(3rem, 8vw, 3.5rem)"
-              fontWeight={700}
-              color="#ededed"
-              baseIntensity={0.3}
-              hoverIntensity={0.8}
-              fuzzRange={14}
-              enableHover
-              clickEffect
-              className="shrink-0"
-            >
-              Student
-            </FuzzyText>
-          </a>
-          <span className="text-muted select-none text-3xl sm:text-5xl shrink-0">—</span>
-          <a href="#athlete" className="cursor-pointer shrink-0">
-            <FuzzyText
-              fontSize="clamp(3rem, 8vw, 3.5rem)"
-              fontWeight={700}
-              color="#ededed"
-              baseIntensity={0.3}
-              hoverIntensity={0.8}
-              fuzzRange={14}
-              enableHover
-              clickEffect
-              className="shrink-0"
-            >
-              Athlete
-            </FuzzyText>
-          </a>
-        </div>
+        {/* Mobile: plain text */}
+        <p className="animate-fade-in-up animation-delay-200 mt-6 text-3xl font-bold text-foreground sm:hidden">
+          <a href="#student">Student</a>
+          <span className="text-muted">—</span>
+          <a href="#athlete">Athlete</a>
+        </p>
+        {/* Desktop: fuzzy text */}
+        <DesktopOnly>
+          <div className="animate-fade-in-up animation-delay-200 mt-6 flex items-center justify-center gap-0">
+            <a href="#student" className="cursor-pointer">
+              <FuzzyText
+                fontSize="clamp(3rem, 8vw, 3.5rem)"
+                fontWeight={700}
+                color="#ededed"
+                baseIntensity={0.3}
+                hoverIntensity={0.8}
+                fuzzRange={14}
+                enableHover
+                clickEffect
+              >
+                Student
+              </FuzzyText>
+            </a>
+            <span className="text-muted select-none text-5xl">—</span>
+            <a href="#athlete" className="cursor-pointer">
+              <FuzzyText
+                fontSize="clamp(3rem, 8vw, 3.5rem)"
+                fontWeight={700}
+                color="#ededed"
+                baseIntensity={0.3}
+                hoverIntensity={0.8}
+                fuzzRange={14}
+                enableHover
+                clickEffect
+              >
+                Athlete
+              </FuzzyText>
+            </a>
+          </div>
+        </DesktopOnly>
         <div className="animate-fade-in-up animation-delay-400 mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
             href="#projects"
