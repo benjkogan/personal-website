@@ -7,10 +7,10 @@ export default function Hero() {
         <h1 className="animate-fade-in-up text-5xl font-bold tracking-tight sm:text-7xl">
           Hi, I&apos;m Ben
         </h1>
-        <div className="animate-fade-in-up animation-delay-200 mt-6 flex items-center justify-center gap-0">
+        <div className="animate-fade-in-up animation-delay-200 mt-6 flex flex-col sm:flex-row items-center justify-center gap-0">
           <a href="#student" className="cursor-pointer">
             <FuzzyText
-              fontSize="clamp(2.6rem, 6vw, 3rem)"
+              fontSize="clamp(3rem, 8vw, 3.5rem)"
               fontWeight={700}
               color="#ededed"
               baseIntensity={0.3}
@@ -22,10 +22,10 @@ export default function Hero() {
               Student
             </FuzzyText>
           </a>
-          <span className="text-muted select-none" style={{ fontSize: "clamp(2.6rem, 6vw, 3rem)" }}>—</span>
+          <span className="text-muted select-none text-3xl sm:text-5xl">—</span>
           <a href="#athlete" className="cursor-pointer">
             <FuzzyText
-              fontSize="clamp(2.6rem, 6vw, 3rem)"
+              fontSize="clamp(3rem, 8vw, 3.5rem)"
               fontWeight={700}
               color="#ededed"
               baseIntensity={0.3}
