@@ -10,9 +10,6 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Ben Kogan",
   description: "Personal website of Ben Kogan",
-  icons: {
-    icon: "/favicon.png",
-  },
   openGraph: {
     title: "Ben Kogan",
     description: "Student — Athlete",
