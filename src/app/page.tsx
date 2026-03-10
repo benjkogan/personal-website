@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import BlobCursor from "@/components/BlobCursor";
 import Cursor from "@/components/Cursor";
 import Dither from "@/components/Dither";
+import DesktopOnly from "@/components/DesktopOnly";
 
 export default function Home() {
   return (
@@ -26,28 +27,28 @@ export default function Home() {
         />
       </div>
 
-      {/* Small dot cursor - on top of everything */}
-      <Cursor />
-
-      {/* Blob cursor - between background and content */}
-      <BlobCursor
-        blobType="circle"
-        fillColor="#0251a7"
-        trailCount={5}
-        sizes={[83, 83, 83, 83, 83]}
-        innerSizes={[20, 20, 20, 20, 20]}
-        innerColor="rgba(255,255,255,0.8)"
-        opacities={[0.6, 0.6, 0.6, 0.6, 0.6]}
-        shadowColor="rgba(0,0,0,0.75)"
-        shadowBlur={5}
-        shadowOffsetX={10}
-        shadowOffsetY={10}
-        filterStdDeviation={30}
-        useFilter={true}
-        fastDuration={0.1}
-        slowDuration={0.5}
-        zIndex={5}
-      />
+      {/* Custom cursors - desktop only */}
+      <DesktopOnly>
+        <Cursor />
+        <BlobCursor
+          blobType="circle"
+          fillColor="#0251a7"
+          trailCount={5}
+          sizes={[83, 83, 83, 83, 83]}
+          innerSizes={[20, 20, 20, 20, 20]}
+          innerColor="rgba(255,255,255,0.8)"
+          opacities={[0.6, 0.6, 0.6, 0.6, 0.6]}
+          shadowColor="rgba(0,0,0,0.75)"
+          shadowBlur={5}
+          shadowOffsetX={10}
+          shadowOffsetY={10}
+          filterStdDeviation={30}
+          useFilter={true}
+          fastDuration={0.1}
+          slowDuration={0.5}
+          zIndex={5}
+        />
+      </DesktopOnly>
 
       {/* Content */}
       <div className="relative z-10 pointer-events-auto">
