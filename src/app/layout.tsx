@@ -10,6 +10,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Ben Kogan",
   description: "Personal website of Ben Kogan",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
