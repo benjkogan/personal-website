@@ -161,6 +161,9 @@ const FuzzyText = ({
       const verticalMargin = 0;
       canvas.width = offscreenWidth + horizontalMargin * 2;
       canvas.height = tightHeight + verticalMargin * 2;
+      canvas.style.width = canvas.width + "px";
+      canvas.style.height = canvas.height + "px";
+      canvas.style.display = "block";
       ctx.translate(horizontalMargin, verticalMargin);
 
       const interactiveLeft = horizontalMargin + xOffset;
