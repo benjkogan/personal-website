@@ -13,6 +13,17 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
   },
+  openGraph: {
+    title: "Ben Kogan",
+    description: "Student — Athlete",
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ben Kogan",
+    description: "Student — Athlete",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({
