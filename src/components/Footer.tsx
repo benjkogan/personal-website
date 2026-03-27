@@ -1,3 +1,5 @@
+"use client";
+
 const socials = [
   {
     label: "LinkedIn",
@@ -39,6 +41,15 @@ export default function Footer() {
               key={social.label}
               href={social.href}
               {...(social.href.startsWith("mailto:") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+              onClick={social.href.startsWith("mailto:") ? (e) => {
+                e.preventDefault();
+                const email = social.href.replace("mailto:", "");
+                window.location.href = social.href;
+                // Fallback: if mailto didn't open anything after a short delay, open Gmail
+                setTimeout(() => {
+                  window.open(`https://mail.google.com/mail/?view=cm&to=${email}`, "_blank");
+                }, 500);
+              } : undefined}
               className="text-muted transition-colors hover:text-accent"
               aria-label={social.label}
             >
