@@ -30,9 +30,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <link rel="preload" href="/transparent.png" as="image" />
+      </head>
       <body
         className={`${inter.variable} antialiased bg-background text-foreground`}
       >
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (matchMedia("(hover:hover) and (pointer:fine)").matches) {
+                var s = document.documentElement.style;
+                s.setProperty("cursor", 'url("/transparent.png") 0 0, none', "important");
+                document.addEventListener("pointerenter", function() {
+                  s.setProperty("cursor", 'url("/transparent.png") 0 0, none', "important");
+                }, true);
+              }
+            `,
+          }}
+        />
         {children}
       </body>
     </html>
