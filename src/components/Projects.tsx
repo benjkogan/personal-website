@@ -2,9 +2,9 @@ const projects = [
   {
     title: "News in Brief",
     description:
-      "A personalized news curation platform that delivers concise, AI-powered summaries of the day's news — with links to sources and conversation starters.",
-    tags: ["AI", "News", "Web App"],
-    demo: "https://news-briefer.onrender.com/",
+      "A personalized news briefing platform powered by Claude AI. Curates articles from RSS feeds and NewsAPI, generates concise summaries with conversation starters, and delivers them daily via email. Built with FastAPI, PostgreSQL, and Amazon SES.",
+    tags: ["Python", "FastAPI", "Claude AI", "PostgreSQL"],
+    demo: "https://newsinbrief.cc",
     source: "",
   },
 ];
