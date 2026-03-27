@@ -3,7 +3,7 @@ const projects = [
     title: "News in Brief",
     description:
       "A personalized news briefing platform powered by Claude AI. Curates articles from RSS feeds and NewsAPI, generates concise summaries with conversation starters, and delivers them daily via email. Built with FastAPI, PostgreSQL, and Amazon SES.",
-    tags: ["Python", "FastAPI", "Claude AI", "PostgreSQL"],
+    tags: ["Python", "FastAPI", "Claude AI", "Supabase"],
     demo: "https://newsinbrief.cc",
     source: "",
   },
