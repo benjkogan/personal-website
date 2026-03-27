@@ -32,23 +32,40 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <head>
         <link rel="preload" href="/transparent.png" as="image" />
-      </head>
-      <body
-        className={`${inter.variable} antialiased bg-background text-foreground`}
-      >
         <script
           dangerouslySetInnerHTML={{
             __html: `
               if (matchMedia("(hover:hover) and (pointer:fine)").matches) {
-                var s = document.documentElement.style;
-                s.setProperty("cursor", 'url("/transparent.png") 0 0, none', "important");
-                document.addEventListener("pointerenter", function() {
-                  s.setProperty("cursor", 'url("/transparent.png") 0 0, none', "important");
-                }, true);
+                var o = document.createElement("div");
+                o.id = "cursor-overlay";
+                o.style.cssText = "position:fixed;inset:0;z-index:99999;cursor:none;pointer-events:auto;";
+                document.documentElement.appendChild(o);
+                var fwd = ["click","dblclick","mousedown","mouseup","contextmenu","wheel","auxclick"];
+                fwd.forEach(function(evt) {
+                  o.addEventListener(evt, function(e) {
+                    o.style.pointerEvents = "none";
+                    var t = document.elementFromPoint(e.clientX, e.clientY);
+                    o.style.pointerEvents = "auto";
+                    if (t) t.dispatchEvent(new e.constructor(e.type, e));
+                  });
+                });
+                o.addEventListener("mousemove", function(e) {
+                  o.style.pointerEvents = "none";
+                  var t = document.elementFromPoint(e.clientX, e.clientY);
+                  o.style.pointerEvents = "auto";
+                  if (t) {
+                    t.dispatchEvent(new MouseEvent("mouseover", e));
+                    t.dispatchEvent(new MouseEvent("mousemove", e));
+                  }
+                });
               }
             `,
           }}
         />
+      </head>
+      <body
+        className={`${inter.variable} antialiased bg-background text-foreground`}
+      >
         {children}
       </body>
     </html>
