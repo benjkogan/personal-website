@@ -6,15 +6,12 @@ export default function Cursor() {
   const dotRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const transparent =
-      "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E\") 0 0, none";
-
     const move = (e: MouseEvent) => {
       if (!dotRef.current) return;
       dotRef.current.style.transform = `translate(${e.clientX - 5}px, ${e.clientY - 5}px)`;
 
       const target = e.target as HTMLElement;
-      if (target?.style) target.style.setProperty("cursor", transparent, "important");
+      if (target?.style) target.style.setProperty("cursor", 'url("/transparent.png") 0 0, none', "important");
     };
 
     window.addEventListener("mousemove", move);
