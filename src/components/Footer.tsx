@@ -38,8 +38,7 @@ export default function Footer() {
             <a
               key={social.label}
               href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...(social.href.startsWith("mailto:") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
               className="text-muted transition-colors hover:text-accent"
               aria-label={social.label}
             >
