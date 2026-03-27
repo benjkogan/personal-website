@@ -11,7 +11,7 @@ const experiences = [
     company: "AfterQuery Experts",
     period: "Oct 2025 – Feb 2026",
     description:
-      "I led cross-functional teams of 5–20 people to curate and deliver clean datasets for enterprise clients. I also built automation with Apps Script and SQL that cut hours of manual work each week.",
+      "I worked under a senior PM to optimize data curation pipelines to enterprise clients. I also optimized processes to save hours of work per project.",
   },
   {
     role: "Mathematics Teacher",
