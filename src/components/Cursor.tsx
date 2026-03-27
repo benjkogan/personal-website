@@ -6,16 +6,34 @@ export default function Cursor() {
   const dotRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Pre-load the cursor image so the browser has it cached
+    const img = new Image();
+    img.src = "/transparent.png";
+
+    const cursorStyle = 'url("/transparent.png") 0 0, none';
+
+    // Apply immediately on mount
+    document.documentElement.style.setProperty("cursor", cursorStyle, "important");
+
     const move = (e: MouseEvent) => {
       if (!dotRef.current) return;
       dotRef.current.style.transform = `translate(${e.clientX - 5}px, ${e.clientY - 5}px)`;
+    };
 
-      const target = e.target as HTMLElement;
-      if (target?.style) target.style.setProperty("cursor", 'url("/transparent.png") 0 0, none', "important");
+    // Re-apply cursor on any pointer entry into the document
+    const hideNative = () => {
+      document.documentElement.style.setProperty("cursor", cursorStyle, "important");
     };
 
     window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
+    document.documentElement.addEventListener("pointerenter", hideNative);
+    document.addEventListener("pointermove", hideNative, { once: false, passive: true });
+
+    return () => {
+      window.removeEventListener("mousemove", move);
+      document.documentElement.removeEventListener("pointerenter", hideNative);
+      document.removeEventListener("pointermove", hideNative);
+    };
   }, []);
 
   return (
