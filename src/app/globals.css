@@ -39,11 +39,8 @@ body {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  html {
-    cursor: url("/transparent.png") 0 0, none !important;
-  }
-  html * {
-    cursor: inherit !important;
+  * {
+    cursor: none !important;
   }
 }
 
