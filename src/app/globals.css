@@ -40,7 +40,7 @@ body {
 
 @media (hover: hover) and (pointer: fine) {
   * {
-    cursor: none !important;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E") 0 0, none !important;
   }
 }
 

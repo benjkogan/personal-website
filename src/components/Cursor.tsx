@@ -9,30 +9,9 @@ export default function Cursor() {
     const move = (e: MouseEvent) => {
       if (!dotRef.current) return;
       dotRef.current.style.transform = `translate(${e.clientX - 5}px, ${e.clientY - 5}px)`;
-
-      // Force-hide native cursor on the hovered element (handles tab-switch & button hover edge cases)
-      const target = e.target as HTMLElement;
-      if (target && target.style && target.style.cursor !== "none") {
-        target.style.cursor = "none";
-      }
     };
-
-    const resetCursor = () => {
-      document.documentElement.style.cursor = "none";
-      document.body.style.cursor = "none";
-    };
-
     window.addEventListener("mousemove", move);
-    document.addEventListener("mouseenter", resetCursor);
-    document.addEventListener("visibilitychange", resetCursor);
-    window.addEventListener("focus", resetCursor);
-
-    return () => {
-      window.removeEventListener("mousemove", move);
-      document.removeEventListener("mouseenter", resetCursor);
-      document.removeEventListener("visibilitychange", resetCursor);
-      window.removeEventListener("focus", resetCursor);
-    };
+    return () => window.removeEventListener("mousemove", move);
   }, []);
 
   return (
