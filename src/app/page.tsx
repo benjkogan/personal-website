@@ -6,7 +6,6 @@ import Projects from "@/components/Projects";
 import Athlete from "@/components/Athlete";
 import Footer from "@/components/Footer";
 import BlobCursor from "@/components/BlobCursor";
-import Cursor from "@/components/Cursor";
 import Dither from "@/components/Dither";
 import DesktopOnly from "@/components/DesktopOnly";
 
@@ -29,9 +28,8 @@ export default function Home() {
         </div>
       </DesktopOnly>
 
-      {/* Custom cursors - desktop only */}
+      {/* Custom cursor - desktop only */}
       <DesktopOnly>
-        <Cursor />
         <BlobCursor
           blobType="circle"
           fillColor="#0251a7"
