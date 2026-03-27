@@ -19,14 +19,17 @@ export default function Cursor() {
 
     const resetCursor = () => {
       document.documentElement.style.cursor = "none";
+      document.body.style.cursor = "none";
     };
 
     window.addEventListener("mousemove", move);
+    document.addEventListener("mouseenter", resetCursor);
     document.addEventListener("visibilitychange", resetCursor);
     window.addEventListener("focus", resetCursor);
 
     return () => {
       window.removeEventListener("mousemove", move);
+      document.removeEventListener("mouseenter", resetCursor);
       document.removeEventListener("visibilitychange", resetCursor);
       window.removeEventListener("focus", resetCursor);
     };
