@@ -1,5 +1,12 @@
 const experiences = [
   {
+    role: "Incoming Product Management Intern",
+    company: "Cisco",
+    period: "Summer 2026",
+    description:
+      "Incoming PM Intern at Cisco in the San Francisco Bay Area.",
+  },
+  {
     role: "Winter Analyst Intern",
     company: "Bracebridge Capital",
     period: "Dec 2025 – Jan 2026",
